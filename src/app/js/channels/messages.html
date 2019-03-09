@@ -1,0 +1,49 @@
+<div class="row mx-0 fill message-list">
+    <div class="col-md-12">
+        <div class="sidebar-pane">
+            <div class="">
+                <a ui-sref="channels.settings({channelId: vm.channel.$id})"
+                    class="btn btn-default">Channel Settings</a>
+            </div>
+        </div>
+
+        <div class="header">
+            <h2>{{vm.channelName}}</h2>
+        </div>
+
+        <div class="message-wrap" ng-repeat="message in vm.messages">
+            <!-- <img class="user-pic" ng-src="{{ channelsCtrl.getGravatar(message.uid) }}" /> -->
+            <div class="message-info">
+                <div class="user-name">
+                    {{message.displayName}}
+                    <span class="timestamp">{{ message.timestamp | date:'short' }}</span>
+                </div>
+                <div class="message">
+                    <p>{{ message.body }}</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="message-form" ng-submit="vm.sendMessage()">
+            <div class="form-group">
+                <!--<input type="text" class="form-control" placeholder="Type a message..."-->
+                    <!--ng-model="vm.message" required maxlength="255" minlength="1"-->
+                    <!--name="message" id="message">-->
+                <!--<span class="input-group-btn">-->
+                    <!--<button class="btn btn-default" type="submit">Send</button>-->
+                <!--</span>-->
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Type a message..."
+                           aria-label="message" aria-describedby="basic-addon2"
+                           ng-model="vm.message" required maxlength="255" minlength="1"
+                           name="message" id="message">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">Send</span>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

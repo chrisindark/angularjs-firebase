@@ -1,0 +1,57 @@
+<div class="container-fluid fill mx-0 px-0" ng-controller="ChannelsController as vm">
+    <div class="row fill mx-0">
+        <div class="col-md-3 fill px-0">
+            <div class="side-bar-heading">
+                <div class="slack-name">
+                    <h2>Fireslack</h2>
+                    <!--<img class="user-pic" ng-src="{{ vm.getGravatar(vm.profile.$id) }}" />-->
+                    <div class="my-info">
+                        <div class="user-info">
+                            <div class="user-name">
+                                <!--<span class="presence" ng-class="{online: vm.profile.online}"></span>-->
+                                {{vm.profile.displayName}}
+                            </div>
+
+                            <div class="options">
+                                <a ui-sref="profile">edit profile</a> /
+                                <a href="javascript:void(0)" ng-click="vm.logout()">logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="channel-list">
+                    <div class="list-head">
+                        <p>Channels</p>
+                    </div>
+                    <div class="channel" ng-repeat="channel in vm.channels">
+                        <a ui-sref="channels.messages({channelId: channel.$id})"
+                           ui-sref-active="selected"># {{channel.name}}</a>
+                    </div>
+
+                    <div class="channel create">
+                        <a ui-sref="channels.create">+ create channel</a>
+                    </div>
+
+                    <div class="list-head">
+                        <p>Direct Messages</p>
+                    </div>
+
+                    <div class="channel" ng-repeat="profile in vm.profiles">
+                        <a ng-if="profile.$id !== vm.profile.$id"
+                           ui-sref="channels.direct({uid: profile.$id})"
+                           ui-sref-active="selected" href="javascript:void(0)">
+                            <span class="presence" ng-class="{online: profile.online}"></span>
+                            {{profile.displayName}}
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-9 fill px-0">
+            <ui-view></ui-view>
+        </div>
+    </div>
+</div>

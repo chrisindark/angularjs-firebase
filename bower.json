@@ -1,0 +1,49 @@
+{
+  "name": "fireslack",
+  "version": "1.0.0",
+  "homepage": "",
+  "main": "",
+  "authors": [
+    "Christopher Paul <christopherp@mindfiresolutions.com>"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "#1.6.10",
+    "angular-animate": "#1.6.10",
+    "angular-cookies": "#1.6.10",
+    "angular-md5": "#0.1.10",
+    "angular-messages": "#1.6.10",
+    "angular-sanitize": "#1.6.10",
+    "angular-touch": "#1.6.10",
+    "angularfire": "2.3.0",
+    "firebase": "#3.6.1",
+    "jquery": "#2.2.4",
+    "bootstrap": "#4.1.0",
+    "snackbarjs": "#1.1.0",
+    "angular-bootstrap": "^2.5.0",
+    "angular-ui-router": "0.4.2"
+  },
+  "description": "",
+  "private": true,
+  "resolutions": {
+    "angularfire": "2.3.0",
+    "jquery": "2.2.4",
+    "angular-ui-router": "0.4.2",
+    "angular": "1.6.10"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css"
+      ]
+    }
+  }
+}

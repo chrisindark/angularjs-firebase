@@ -1,0 +1,27 @@
+<div class="row mx-0">
+    <div class="col-md-12">
+        <div class="header">
+            <h1>Create a channel</h1>
+        </div>
+
+        <form name="vm.form" ng-submit="vm.form.$valid && vm.createChannel()">
+            <div class="alert alert-danger" ng-show="vm.error">
+                <span ng-bind="vm.error.message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Channel name</label>
+                <input type="text" class="form-control" placeholder="Channel Name"
+                    id="name" name="name" ng-model="vm.newChannel.name"
+                    minlength="5" maxlength="50" required>
+                <div ng-messages="vm.form.$submitted && vm.form.name.$error"
+                    style="color:red" role="alert">
+                    <div ng-message="required">This field is required.</div>
+                    <div ng-message="minlength">This field is too short.</div>
+                    <div ng-message="maxlength">This field is too long.</div>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-default" value="Create Channel">
+        </form>
+    </div>
+</div>

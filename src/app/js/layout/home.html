@@ -1,0 +1,17 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4
+    bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal">FireSlack</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#">Features</a>
+        <a class="p-2 text-dark" href="#">Enterprise</a>
+        <a class="p-2 text-dark" href="#">Support</a>
+        <a class="p-2 text-dark" href="javascript:void(0)"
+           ng-if="vm.userProfile">{{vm.userProfile.displayName}}</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="javascript:void(0)"
+       ng-click="vm.logout()"
+    >Sign out</a>
+</div>
+
+<div class="container-fluid fill mx-0 px-0" ui-view>
+</div>

@@ -1,0 +1,50 @@
+<div class="page-wrapper">
+    <div class="page-header">
+        <h1><a><img class="logo-img" src="app/assets/images/logo.png" /></a> Log In</h1>
+    </div>
+
+    <form name="vm.form" ng-submit="vm.form.$valid && vm.login()">
+        <div class="alert alert-danger" ng-show="vm.error">
+            <span ng-bind="vm.error.message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" placeholder="Email"
+                   id="email" name="email" ng-model="vm.email"
+                   ng-class="{'has-error': vm.form.email.$error}"
+                   maxlength="255" required>
+
+            <div ng-messages="vm.form.$submitted && vm.form.email.$error"
+                 class="help-block" role="alert">
+                <div ng-message="email">This field must be a valid email address.</div>
+                <div ng-message="required">This field is required.</div>
+                <div ng-message="minlength">This field is too short.</div>
+                <div ng-message="maxlength">This field is too long.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" placeholder="Password"
+                   id="password" name="password" minlength="8" maxlength="20"
+                   ng-class="{'has-error': vm.form.password.$error}"
+                   ng-model="vm.password" required>
+
+            <div ng-messages="vm.form.$submitted && vm.form.password.$error"
+                 class="help-block" role="alert">
+                <div ng-message="required">This field is required.</div>
+                <div ng-message="minlength">The password must be at least 8 characters long.</div>
+                <div ng-message="maxlength">The password must be at least 20 characters long.</div>
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-lg btn-primary btn-block"
+                    ng-disabled="vm.isSubmitted">Log In</button>
+            <br>
+            <a class="pull-right" ui-sref="register">Not a member? Sign up</a>
+
+        </div>
+    </form>
+</div>

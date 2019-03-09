@@ -1,0 +1,34 @@
+<div class="page-wrapper">
+    <div class="page-header">
+        <h1><a><img class="logo-img" src="app/assets/images/logo.png" /></a>Edit Profile</h1>
+    </div>
+
+    <form name="vm.form" ng-submit="vm.form.$valid && vm.updateProfile()">
+        <p ng-if="!vm.newProfile.displayName">
+            You'll need a display name before you can start chatting.
+        </p>
+
+        <div class="alert alert-danger" ng-show="vm.error">
+            <span ng-bind="vm.error.message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="displayName">Display Name</label>
+            <input type="text" class="form-control" placeholder="Display Name"
+                   id="displayName" name="displayName" minlength="8"
+                   maxlength="20" ng-model="vm.newProfile.displayName" required>
+            <div ng-messages="vm.form.$submitted && vm.form.displayName.$error"
+                 class="help-block" role="alert">
+                <div ng-message="required">* This field is required.</div>
+                <div ng-message="minlength">* The password must be at least 8 characters long.</div>
+                <div ng-message="maxlength">* The password must be at least 20 characters long.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                {{vm.newProfile.displayName ? "Update Display Name" : "Set Display Name"}}
+            </button>
+        </div>
+    </form>
+</div>

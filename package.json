@@ -2,30 +2,33 @@
   "name": "fireslack",
   "version": "1.0.0",
   "dependencies": {
-    "bower": "1.8.4",
-    "browser-sync": "2.24.4",
-    "connect-history-api-fallback": "1.5.0",
-    "gulp": "3.9.1",
-    "gulp-angular-templatecache": "2.2.0",
-    "gulp-clean": "0.4.0",
+    "browser-sync": "^2.26.12",
+    "connect-history-api-fallback": "^1.6.0",
     "gulp-concat": "2.6.1",
-    "gulp-cssnano": "2.1.3",
-    "gulp-inject": "4.3.2",
     "gulp-rev": "8.1.1",
     "gulp-rev-all": "0.9.7",
     "gulp-sourcemaps": "2.6.4",
     "gulp-uglify": "3.0.0",
-    "main-bower-files": "2.13.1",
-    "run-sequence": "2.2.1",
-    "wiredep": "4.0.0",
-    "yargs": "11.0.0"
+    "main-bower-files": "^2.13.3",
+    "run-sequence": "2.2.1"
   },
   "repository": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "bower": "^1.8.8",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-angular-templatecache": "^3.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-inject": "^5.0.5",
+    "gulp-postcss": "^8.0.0",
+    "wiredep": "^4.0.0",
+    "yargs": "^15.4.1"
+  },
   "engines": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp serve",
+    "start": "npx gulp serve",
     "postinstall": "chmod 755 ./scripts/postInstall.sh && ./scripts/postInstall.sh"
   }
 }
